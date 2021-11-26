@@ -19,6 +19,7 @@ exports.getDirectoryListings = (directory) => {
                                 const stats = await fs.statSync(joinedpath);
                                 listings.push({
                                     name: file,
+                                    path: path.join(directory, file),
                                     size: getFileSize(joinedpath),
                                     directory: stats.isDirectory(),
                                     created: stats["birthtime"],
